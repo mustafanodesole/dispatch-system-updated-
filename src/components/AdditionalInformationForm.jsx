@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Button, Input, Textarea } from "@nextui-org/react";
 import { CgProfile } from "react-icons/cg";
-import { FaPhoneAlt } from "react-icons/fa";
+import { FaCross, FaPhoneAlt } from "react-icons/fa";
 import Profile from "@/icons/profile";
 import Age from "@/icons/Age";
 import Address from "@/icons/Address";
@@ -12,6 +12,7 @@ import EmailType from "@/icons/EmailType";
 import Map from "./Map";
 import { rows } from "./CallLog";
 import { useRouter } from "next/navigation";
+import { IoClose } from "react-icons/io5";
 
 const AdditionalInformationForm = ({ formData, setFormData , onSubmit, onClose }) => {
   const router = useRouter();
@@ -58,13 +59,17 @@ const AdditionalInformationForm = ({ formData, setFormData , onSubmit, onClose }
 
   return (
     <div>
-      <Map center={center} height={"41vh"} />
+      <Map center={center} height={"47vh"} />
       <form
         className="max-w-[98%] mt-4 w-full mx-auto p-4 bg-white shadow-md rounded-lg"
         onSubmit={handleSubmit}
       >
-        <div className="flex flex-col gap-2 sm:flex-row items-baseline mb-2">
+        <div className="flex flex-col gap-2 sm:flex-row justify-between items-baseline mb-2">
           <p className="text-[23px] font-bold">Add Information</p>
+          <Button color="grey"  onPress={onClose} size="sm">
+            <IoClose className="text-lg "/>
+          </Button>
+
         </div>
         <div className="grid gap-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -143,20 +148,21 @@ const AdditionalInformationForm = ({ formData, setFormData , onSubmit, onClose }
           </div>
           <div className="space-y-4">
             <Textarea
-              placeholder="Caller Description"
+              placeholder="Dispatcher's Note"
               size="sm"
               classNames={{ inputWrapper: "!bg-white" }}
-              className="w-full border border-gray-300 p-2 rounded"
+              className="w-full border border-gray-300 p-2 h-16 rounded "
               value={formData.callerDescription}
               onChange={handleChange}
               name="callerDescription"
               startContent={<Note />}
+              
             />
             <Textarea
-              placeholder="Special Instructions"
+              placeholder="Caller's Description"
               size="sm"
               classNames={{ inputWrapper: "!bg-white" }}
-              className="w-full border border-gray-300 p-2 rounded"
+              className="w-full border border-gray-300 p-2 h-16 rounded"
               value={formData.specialInstructions}
               onChange={handleChange}
               name="specialInstructions"
@@ -165,9 +171,7 @@ const AdditionalInformationForm = ({ formData, setFormData , onSubmit, onClose }
           </div>
         </div>
         <div className="mt-4 flex max-sm:flex-col sm:flex-row gap-2 justify-end">
-          <Button color="danger" variant="flat" onPress={onClose} size="sm">
-            Close
-          </Button>
+          
           <Button
             type="submit"
             className="bg-[#2D8076] text-white"
