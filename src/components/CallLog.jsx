@@ -130,12 +130,12 @@ export default function CallLog() {
                                 <td className=""> <span className="w-max flex text-xs py-[6px] pl-[8px] pr-[8px] rounded-full   bg-[#2D8076] text-white items-center gap-1"><IoShareSocialOutline />Share</span></td>
                             </tr>
                            {index === arcIndex ?  <AccordionComponent row={row} />  : <></>}
-                           <tr className="text-center">
+                           {/* <tr className="text-center">
                                 <td colSpan={columns.length} className="text-center">
                                     
                                 </td>
                                 
-                            </tr> 
+                            </tr>  */}
                         </React.Fragment>
                     )): null}
                 </tbody>

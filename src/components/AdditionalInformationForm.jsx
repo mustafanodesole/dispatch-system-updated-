@@ -67,7 +67,7 @@ const AdditionalInformationForm = ({ formData, setFormData , onSubmit, onClose }
         <div className="flex flex-col gap-2 sm:flex-row justify-between items-baseline mb-2">
           <p className="text-[23px] font-bold">Add Information</p>
           <Button color="grey"  onPress={onClose} size="sm">
-            <IoClose className="text-lg "/>
+            <IoClose className="text-lg"/>
           </Button>
 
         </div>
