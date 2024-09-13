@@ -6,7 +6,7 @@ import { Toaster, toast } from "react-hot-toast";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 
-const page = () => {
+const Page = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [userID, setUserID] = useState("");
@@ -85,4 +85,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

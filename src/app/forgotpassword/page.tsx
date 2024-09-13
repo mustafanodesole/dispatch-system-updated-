@@ -14,7 +14,7 @@ import axios from "axios";
 import Link from "next/link";
 import PublicNavbar from "@/components/PublicNavbar";
 
-const page = () => {
+const Page = () => {
   const [sendEmail, setSendEmail] = useState(false);
   const [userMail, setUserMail] = useState("");
 
@@ -73,4 +73,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

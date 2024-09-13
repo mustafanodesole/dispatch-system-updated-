@@ -26,7 +26,7 @@ export default function VerifyEmail() {
     if (token.length > 0) {
       verifyUserEmail();
     }
-  }, [token]);
+  }, [token, verifyUserEmail]);
 
   return (
     <div className="flex flex-col justify-center items-center min-h-screen py-5">
